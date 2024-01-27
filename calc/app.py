@@ -61,7 +61,7 @@ operations_dict = {
 
 @app.route('/math/<operation>')
 def math_operation(operation):
-    '''Perform math operations with query paramters a and b.'''
+    '''Perform math operations with query parameters a and b.'''
     # Check if the requested operation is valid
     if operation not in operations_dict:
         abort(404) #Operation not found
@@ -69,7 +69,7 @@ def math_operation(operation):
     # Get the function corresponding to the requested operation
     operation_function = operations_dict[operation]
 
-    #Get values of a and b from query parameters with defualt values
+    #Get values of a and b from query parameters with default values
     a = float(request.args.get('a',1))
     b = float(request.args.get('b',1))
 
